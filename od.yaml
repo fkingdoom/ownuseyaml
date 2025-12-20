@@ -346,7 +346,6 @@ proxy-groups:
     proxies:
       - 主力香港优选 # ⬅️ 默认使用主力机场优选
       - 备用香港优选 # ⬅️ 手动切换至备用机场优选
-      - 香港均衡 # 保持原有均衡选项
       - 故障转移 # 保持原有故障转移选项
     icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Hongkong.png"
 
@@ -356,7 +355,6 @@ proxy-groups:
     proxies:
       - 主力新加坡优选
       - 备用新加坡优选
-      - 新加坡均衡
       - 故障转移
     icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Singapore.png"
 
@@ -366,7 +364,6 @@ proxy-groups:
     proxies:
       - 主力日本优选
       - 备用日本优选
-      - 日本均衡
       - 故障转移
     icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Japan.png"
 
@@ -376,7 +373,6 @@ proxy-groups:
     proxies:
       - 主力台湾优选
       - 备用台湾优选
-      - 台湾均衡
       - 故障转移
     icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/Taiwan_China.png"
 
@@ -386,7 +382,6 @@ proxy-groups:
     proxies:
       - 主力美国优选
       - 备用美国优选
-      - 美国均衡
       - 故障转移
     # ⬇️ 新增：直接引入两个订阅源
     use:
