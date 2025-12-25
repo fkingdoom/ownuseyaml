@@ -396,8 +396,8 @@ rules:
   - DOMAIN,odboluo.ts3.uno,全球直连
   - DOMAIN-SUFFIX,luxrealm.space,香港节点
   - DOMAIN-SUFFIX,qtecrab.com,备用美国优选
-  - DOMAIN-SUFFIX,m.mobaiemby.site,备用美国优选
-  - DOMAIN-SUFFIX,aaa.204cloud.com,全球直连
+  - DOMAIN-SUFFIX,mobaiemby.site,备用美国优选
+  - DOMAIN-SUFFIX,204cloud.com,全球直连
   - DOMAIN-SUFFIX,ash.yt,新加坡节点
   - RULE-SET,banAd_domain,隐私拦截
   - RULE-SET,wechat_domain,全球直连
