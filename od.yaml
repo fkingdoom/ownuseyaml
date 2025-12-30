@@ -53,21 +53,19 @@ skip-auth-prefixes:
 
 geodata-mode: false
 # GEO 文件加载模式（standard：标准加载器/memconservative：专为内存受限 (小内存) 设备优化的加载器 (默认值)）
-geodata-loader: standard
+geodata-loader: memconservative
 geo-auto-update: true
 geo-update-interval: 24
 geox-url:
   geosite: "https://gcore.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat"
-  mmdb: "https://gcore.jsdelivr.net/gh/Loyalsoldier/geoip@release/Country.mmdb"
-  geoip: "https://gcore.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat"
-  asn: "https://gcore.jsdelivr.net/gh/Loyalsoldier/geoip@release/GeoLite2-ASN.mmdb"
+  geoip: "https://gcore.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat
 
 # 控制面板
 external-controller: 0.0.0.0:9090
 secret: ""
 #  密码设置选项默认无
 external-ui: ui
-external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
+external-ui-url: "https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip"
 # 下载面板地址可更换：https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip
 
 # 匹配进程 always/strict/off
@@ -134,7 +132,6 @@ dns:
   # 黑名单模式表示如果匹配成功则不返回 Fake-IP, 白名单模式时只有匹配成功才返回 Fake-IP
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
-    - "+.266219.xyz"
     - "+.ts3.uno"
     - "rule-set:fakeip_filter_domain"
     - "rule-set:game_cn_domain"
@@ -167,31 +164,8 @@ dns:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
   nameserver:
-    - https://cloudflare-dns.com/dns-query
+    - https://1.1.1.1/dns-query
     - https://dns.google/dns-query
-  #nameserver-policy:
-   # "geosite:cn,private": [https://dns.alidns.com/dns-query, https://doh.pub/dns-query]
-   # "geosite:apple,microsoft": [202.96.134.133, https://dns.alidns.com/dns-query]
-    #"geosite:geolocation-!cn": [https://1.1.1.1/dns-query, https://8.8.8.8/dns-query]
-   # dns.alidns.com: quic://223.5.5.5:853
-   # dot.pub: 119.29.29.29
-   # doh.pub: 119.29.29.29
-   # dns.pub: 119.29.29.29
-   # doh.360.cn: 101.198.198.198
-    #rule-set:mihomo_nameserver_policy_alibaba: quic://dns.alidns.com:853
-   # rule-set:mihomo_nameserver_policy_tencent: https://doh.pub/dns-query
-  #  rule-set:mihomo_nameserver_policy_bilibili: https://doh.pub/dns-query
-    #rule-set:mihomo_nameserver_policy_xiaomi: https://doh.pub/dns-query
-  #  rule-set:mihomo_nameserver_policy_bytedance: [180.184.2.2]
-  #  rule-set:mihomo_nameserver_policy_baidu: [180.76.76.76]
-  #  rule-set:mihomo_nameserver_policy_qihoo360: https://doh.360.cn/dns-query
-  #  rule-set:mihomo_nameserver_policy_hotspot_captive_portal: [202.96.134.133]
-  #  "*.m2m": [202.96.134.133]
- #   injections.adguard.org: [202.96.134.133]
-  #  local.adguard.org: [202.96.134.133]
- #   "*.bogon": [202.96.134.133]
- #   rule-set:mihomo_nameserver_policy_lan_without_real_ip: [202.96.134.133]
- #   rule-set:mihomo_nameserver_policy_lan_with_realip: [202.96.134.133]
     
 proxies: 
   - name: "🟢 直连"
@@ -607,20 +581,4 @@ rule-providers:
   google_asn_cn: { <<: *ip, url: "https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/rules/IP/AS24424.mrs" }
   discord_asn: { <<: *ip, url: "https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/rules/IP/AS49544.mrs" }
   wechat_asn: { <<: *ip, url: "https://raw.githubusercontent.com/Lanlan13-14/Rules/refs/heads/main/rules/IP/AS132203.mrs" }
-  mihomo_nameserver_policy_alibaba: { <<: *class, url: "https://ruleset.skk.moe/Internal/mihomo_nameserver_policy/alibaba.txt" }
-  mihomo_nameserver_policy_tencent: { <<: *class, url: "https://ruleset.skk.moe/Internal/mihomo_nameserver_policy/tencent.txt" }
-  mihomo_nameserver_policy_bilibili: { <<: *class, url: "https://ruleset.skk.moe/Internal/mihomo_nameserver_policy/bilibili.txt" }
-  mihomo_nameserver_policy_xiaomi: { <<: *class, url: "https://ruleset.skk.moe/Internal/mihomo_nameserver_policy/xiaomi.txt" }
-  mihomo_nameserver_policy_bytedance: { <<: *class, url: "https://ruleset.skk.moe/Internal/mihomo_nameserver_policy/bytedance.txt" }
-  mihomo_nameserver_policy_baidu: { <<: *class, url: "https://ruleset.skk.moe/Internal/mihomo_nameserver_policy/baidu.txt" }
-  mihomo_nameserver_policy_qihoo360: { <<: *class, url: "https://ruleset.skk.moe/Internal/mihomo_nameserver_policy/qihoo360.txt" }
-  mihomo_nameserver_policy_hotspot_captive_portal: { <<: *class, url: "https://ruleset.skk.moe/Internal/mihomo_nameserver_policy/hotspot_captive_portal.txt" }
-  mihomo_nameserver_policy_lan_without_real_ip: { <<: *class, url: "https://ruleset.skk.moe/Internal/mihomo_nameserver_policy/lan_without_real_ip.txt" }
-  mihomo_nameserver_policy_lan_with_realip: { <<: *class, url: "https://ruleset.skk.moe/Internal/mihomo_nameserver_policy/lan_with_realip.txt" }
-hosts:
-  dns.alidns.com:
-    - 223.5.5.5
-    - 223.6.6.6
-  127.0.0.1.sslip.io: 127.0.0.1
-  127.atlas.skk.moe: 127.0.0.1
-  cdn.jsdelivr.net: cdn.jsdelivr.net.cdn.cloudflare.net
+
