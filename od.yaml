@@ -58,7 +58,7 @@ geo-auto-update: true
 geo-update-interval: 24
 geox-url:
   geosite: "https://gcore.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat"
-  geoip: "https://gcore.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat
+  geoip: "https://gcore.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat"
 
 # 控制面板
 external-controller: 0.0.0.0:9090
