@@ -53,14 +53,16 @@ skip-auth-prefixes:
 
 geodata-mode: false
 # GEO 文件加载模式（standard：标准加载器/memconservative：专为内存受限 (小内存) 设备优化的加载器 (默认值)）
-geodata-loader: memconservative
+geodata-loader: standard
 geo-auto-update: true
 geo-update-interval: 24
 geox-url:
   geosite: "https://gcore.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geosite.dat"
+  mmdb: "https://gcore.jsdelivr.net/gh/Loyalsoldier/geoip@release/Country.mmdb"
   geoip: "https://gcore.jsdelivr.net/gh/Loyalsoldier/v2ray-rules-dat@release/geoip.dat"
+  asn: "https://gcore.jsdelivr.net/gh/Loyalsoldier/geoip@release/GeoLite2-ASN.mmdb"
 
-# 控制面板
+ # 控制面板
 external-controller: 0.0.0.0:9090
 secret: ""
 #  密码设置选项默认无
@@ -164,7 +166,6 @@ dns:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
   nameserver:
-    - https://dns.alidns.com/dns-quer
     - https://1.1.1.1/dns-query
     - https://dns.google/dns-query
     
