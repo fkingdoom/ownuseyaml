@@ -134,6 +134,9 @@ dns:
   # 黑名单模式表示如果匹配成功则不返回 Fake-IP, 白名单模式时只有匹配成功才返回 Fake-IP
   fake-ip-filter-mode: blacklist
   fake-ip-filter:
+    - "geosite:connectivity-check"
+    - "geosite:private"
+    - "geosite:cn"
     - "+.ts3.uno"
     - "rule-set:fakeip_filter_domain"
     - "rule-set:game_cn_domain"
@@ -162,12 +165,11 @@ dns:
   proxy-server-nameserver:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
-  direct-nameserver:
-    - https://doh.pub/dns-query
-    - https://dns.alidns.com/dns-query
   nameserver:
-    - https://1.1.1.1/dns-query
-    - https://dns.google/dns-query
+    - "https://8.8.8.8/dns-query#PROXY&ecs=120.76.0.0/14&ecs-override=true"
+   direct-nameserver:
+    - 202.96.134.133
+
     
 proxies: 
   - name: "🟢 直连"
@@ -376,8 +378,8 @@ proxy-groups:
     icon: "https://pub-8feead0908f649a8b94397f152fb9cba.r2.dev/America.png"
 
 rules: 
+  - DOMAIN-SUFFIX,ts3.uno,全球直连
   - DOMAIN-SUFFIX,cn2gias.uk,备用美国优选
-  - DOMAIN,odboluo.ts3.uno,全球直连
   - DOMAIN-SUFFIX,luxrealm.space,香港节点
   - DOMAIN-SUFFIX,qtecrab.com,备用美国优选
   - DOMAIN-SUFFIX,mobaiemby.site,备用美国优选
