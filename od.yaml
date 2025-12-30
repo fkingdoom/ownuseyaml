@@ -166,7 +166,8 @@ dns:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
   nameserver:
-    - "https://8.8.8.8/dns-query#PROXY&ecs=120.76.0.0/14&ecs-override=true"
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
    direct-nameserver:
     - 202.96.134.133
 
